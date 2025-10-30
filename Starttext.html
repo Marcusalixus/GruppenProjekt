@@ -1,0 +1,178 @@
+<html>
+    <head>
+	    <meta charset="utf-8">
+		<link href='stil/Start_Stil.css' rel='stylesheet' type='text/css'>                                   
+	    <title>Riddle</title>
+	    
+		
+    </head>		
+
+    <body>	
+	
+	
+	    <h1>New York</h1>
+		 
+		    
+		    <button 
+		        type="button" 
+		        id="test"                    
+		        onclick= "start_script_1()"> <!-- Gibt die zwei sachen an die passieren wenn der Knopf gedrückt wird -->		        
+		                                    Fortfahren
+		    </button>
+		 
+		        <p id="Nummereins">
+		        </p>
+		        <p id="Nummer2">
+		        </p>
+		        <p id="Nummer3">
+		        </p>
+				<p id="Intro">
+				</p>
+		        <p id="Intro2">
+				<!-- </p> -->
+				<p id="TutorialContainer">
+				<a id="Tutorial" href="/Website/NameBitte.html">
+				</a>
+				</p>
+				<p id="SkipTutorialContainer">
+				<a id="Skip_Tutorial" href="/Website/NameBitte.html">
+				</a>
+				</p>
+		        <!--<img id="WatchingEyeApperance1" src="/Website/Bilder/BackgroundEye1.jpg" style="display:none" /> -->
+				
+		
+		
+        <script>
+		    let txt= ""
+            let speed = 50;
+            let currentElement = "";
+		    let i = 0
+			let typing = false;
+		    let Button_Clicked= 0
+		    
+			function start_script_1(){
+		        i= 0
+		        if (typing) return;
+				
+				typeWriter()
+					
+		    }
+		  
+		   function typeWriter() {	   
+		        typing = true;
+		        if (Button_Clicked === 0){
+			       			
+                    txt = 'Wir schreiben das Jahr 1984'; // Der Text 
+                     
+                    if (i < txt.length) {
+                        document.getElementById("Nummereins").innerHTML += txt.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, speed);
+					
+                    }
+					else{
+		   	             Button_Clicked++ 
+			             typing = false;
+		            }   
+		        }
+				 
+		        else if (Button_Clicked === 1){		    
+                    			
+                    txt = 'Freiheit ist Tod'; //Der Text 
+                     
+                    if (i < txt.length) {
+                        document.getElementById("Nummer2").innerHTML += txt.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, speed);
+			  
+		            }
+			        else{
+			            Button_Clicked++ 
+			            typing = false;
+		            }
+		        }	
+                else if (Button_Clicked === 2){		    
+                    			
+                    txt = 'Der Staat...'; //Der Text 
+                     
+                    if (i < txt.length) {
+                        document.getElementById("Nummer3").innerHTML += txt.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, speed);
+			  
+		            }
+			        else{
+			            Button_Clicked++ 
+			            typing = false;
+						IntroTitle()
+		            }
+		    	}
+			}	
+				
+				
+		       function SendOptionsforIntro(){
+		        c= 0
+		        StartTheTutorialChoic()
+				
+
+                function StartTheTutorialChoic() {
+				
+			        txt = 'Tutorial[Empfolen für neue Spieler]'; //Der Text 
+                     
+                    if (c < txt.length) {
+                        document.getElementById("Tutorial").innerHTML += txt.charAt(c);
+                        c++; 
+                        setTimeout( StartTheTutorialChoic, speed)
+			       
+					
+					}
+				}
+			}	
+		        
+		       function SkipTutorialIntroOption(){
+		        g= 0
+		        SkipTutorialChoice()
+				
+				function SkipTutorialChoice() {
+				
+			        txt = 'Tutorial Überspringen'; //Der Text 
+                     
+                    if (g < txt.length) {
+					    document.getElementById("Skip_Tutorial").innerHTML += txt.charAt(g);
+                        g++; 
+                        setTimeout(SkipTutorialChoice, speed)
+			
+			        
+			        }
+			    }
+			}
+			
+			
+			
+			
+		  
+        </script>
+		<script>
+		 
+		    function IntroTitle(){
+		
+		        setTimeout(function IntroTitle(){
+		
+		            document.getElementById("Intro").innerHTML = "Sieht"; IntroTitle2();  
+		        }, 2000);
+
+		
+		    }
+		
+		    function IntroTitle2(){
+		
+		        setTimeout(function IntroTitle2(){
+		
+		            document.getElementById("Intro2").innerHTML = "ALLES"; SendOptionsforIntro(); SkipTutorialIntroOption(); /*document.getElementById('WatchingEyeApperance1').style.display = 'block';*/
+		        }, 2000);
+		    }
+		
+		
+		</script>
+		
+		
