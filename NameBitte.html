@@ -1,0 +1,125 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+		<link href='stil/Start_Stil.css' rel='stylesheet' type='text/css'>                                   
+	    <title>Namen Eingeben</title>
+    </head>
+	
+	<body>
+	    <button 
+		
+		    type="button" 
+		    id="test"                    
+		    onclick= "NamenFragen()"> <!-- Gibt die zwei sachen an die passieren wenn der Knopf gedrückt wird -->		        
+		                                    Fortfahren
+		</button>
+	   
+        <button onclick="SubmitName1()" id= "SubmitName" style="display:none"> Abgeben 
+		</button>
+		
+		<P id="NamenFrage">
+		</p>
+		<p id="ChoiceIllusionText">
+		</p>	
+		<input id="Name1" style="display:none" placeholder="Name">
+		<p id="NameTextDisplay">
+		</P>
+		<script>
+		
+		    let txt= ""           
+            let currentElement = "";
+		    let i = 0;
+            let c = 0;
+            let g = 0;		
+		    let Button_Clicked= 0;
+			
+			
+		       function NamenFragen(){
+		        i= 0
+				document.getElementById("NamenFrage").innerHTML = "";
+		        NamenFrage1();
+				}
+
+                function NamenFrage1() {
+				   
+			        txt = 'Was ist'; //Der Text 
+                    speed = 50; 
+                    if (i < txt.length) {
+                        document.getElementById("NamenFrage").innerHTML += txt.charAt(i);
+                        i++; 
+                        setTimeout(NamenFrage1, speed);
+		            }
+					
+					else{
+					ChoiceIllusionOuterNest();
+					}
+					
+				
+				}
+				
+				
+			function ChoiceIllusionOuterNest(){
+			c = 0;
+		    ChoiceIllusion();
+		    }
+			
+			function ChoiceIllusion(){
+
+			        txt = 'dein'; //Der Text 
+                    speed = 50; 
+                    if (c < txt.length) {
+                        document.getElementById("ChoiceIllusionText").innerHTML += txt.charAt(c);
+                        c++; 
+                        setTimeout(ChoiceIllusion, speed)
+		            }
+					else{
+					IllusionBreak1()
+					NameText()
+					}
+		    }
+			
+			function IllusionBreak1(){
+		
+		        setTimeout(() => {
+		            document.getElementById("ChoiceIllusionText").innerHTML = ""; document.getElementById('Name1').style.display = 'block';
+				    document.getElementById('SubmitName').style.display = 'block';
+		            document.getElementById("ChoiceIllusionText").innerHTML = "ein";   
+		        }, 3000);
+            }
+			
+			
+			function NameText(){
+		        g= 0			
+		        NameTextInnerNest();
+				}
+
+                function NameTextInnerNest() {
+				   
+			        txt = 'Name'; //Der Text 
+                    speed = 50; 
+                    if (g < txt.length) {
+                        document.getElementById("NameTextDisplay").innerHTML += txt.charAt(g);
+                        g++; 
+                        setTimeout(NameTextInnerNest, speed);
+		            }
+					else{
+					
+					};
+		        }
+			function SubmitName1(){
+			   
+			   const NameOfPlayer = document.querySelector("#Name1").value.trim();
+
+			    if (NameOfPlayer) {
+                localStorage.setItem("NameOfPlayer", NameOfPlayer);
+
+				 window.location.href = "/Website/Tutorial/Seite1Tutorial.html";
+                }		
+			   	               
+			}
+				
+		</script>
+	
+		
+		
+	
