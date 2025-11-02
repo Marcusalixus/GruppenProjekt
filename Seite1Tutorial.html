@@ -1,0 +1,193 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+		<link href='/Website/stil/TutorialStyle.css' rel='stylesheet' type='text/css'>                                   
+	    <title>Namen Eingeben</title>
+    </head>
+	
+	<body>
+    <button id="Fortfahren" onclick="TutorialStage1Outer()">
+    </button>
+    <h2 id="GreetingTutorial">
+    </h2>
+    <button id="Paranoia_Meter_Explenetion" onclick="FurtherExplanetionOfParanoia()">       
+    </button>
+    <p id="Paranoia_Meter">
+    </p>
+    <p id="FurtherParanoia1">
+    </p>
+    <p id="FurtherParanoia2">
+    </p>
+    <p id="FurtherParanoia3">
+    </p>
+    <p id="FurtherParanoia4">
+    </p>
+    <p id="FurtherParanoia5">
+    </p>
+     <button id="WatchMeterExplenationButton" onclick="FurtherExplanetionOfWatchMeter()">       
+    </button>
+    <p id="Watch_Meter">
+    </p>
+    <p id="FurtherWatchMeter">       
+    </p>
+     <p id="FurtherWatchMeter2">       
+    </p>
+     <p id="FurtherWatchMeter3">       
+    </p>
+     <p id="FurtherWatchMeter4">       
+    </p>
+     <p id="FurtherWatchMeter5">       
+    </p>
+     <p id="FurtherWatchMeter6">       
+    </p>
+     <p id="FurtherWatchMeter7">       
+    </p>
+    <p id="EyeTip">       
+    </p>
+    <a id="Seite2vonTutorialStart" href="">
+    </a>
+
+
+    <script>
+    document.getElementById("Fortfahren").innerHTML = "Fortfahren"
+    let WatchMeter = 0
+    let ParanoiaMeter = 0
+    localStorage.setItem("ParanoiaMeter", ParanoiaMeter);  
+    localStorage.setItem("WatchMeter", WatchMeter);
+    const NameOfPlayer =  localStorage.getItem("NameOfPlayer");
+    let i = 0 ;
+    let c = 0;
+    let g = 0;
+    let WatchMeterButtonClicked = 0;
+    let TutorialButton1Clicked = 0;
+    let ParanoiaButtonClicked = 0;
+    function TutorialStage1Outer(){
+	TutorialStage1Inner()
+    
+	}
+	
+	function TutorialStage1Inner(){
+	
+	 if (TutorialButton1Clicked === 0 ){
+     if (NameOfPlayer) {
+      document.getElementById("GreetingTutorial").textContent = `Hallo, ${NameOfPlayer}!`; TurnoffThePlayerName();TutorialButton1Clicked++;
+    } else {   
+      document.getElementById("GreetingTutorial").textContent = "Willkommen, Spieler!";
+      TutorialButton1Clicked++
+    }
+    }
+
+
+
+    else if (TutorialButton1Clicked === 1){
+      speed = 50; 
+      txt = 'Das ist deine Paranoia anzeige =>'
+      document.getElementById("Paranoia_Meter").innerHTML = ParanoiaMeter + "%";
+      if (i < txt.length) {
+      document.getElementById("Paranoia_Meter_Explenetion").innerHTML += txt.charAt(i);
+      i++; 
+      setTimeout(TutorialStage1Inner, speed)
+		            }
+            else{
+            TutorialButton1Clicked++   
+            }
+
+
+                }
+
+      else if (TutorialButton1Clicked === 2){
+      speed = 50; 
+      txt = 'Das ist deine Überwachungs Anzeige =>'
+      document.getElementById("Watch_Meter").innerHTML = WatchMeter;
+      if (c < txt.length) {
+      document.getElementById("WatchMeterExplenationButton").innerHTML += txt.charAt(c);
+      c++; 
+      setTimeout(TutorialStage1Inner, speed)
+		            }                  
+                    else{
+                    document.getElementById("Fortfahren").innerHTML = "Diese Seite ist beendet"
+                    }
+                }
+                
+
+    }
+    
+    function TurnoffThePlayerName() {
+     setTimeout(() => {
+    document.getElementById("GreetingTutorial").textContent = "";
+    document.getElementById("GreetingTutorial").textContent = "Hallo 12374219866";
+        
+     }, 1000);
+
+    }
+
+    function FurtherExplanetionOfParanoia(){
+    
+    if (ParanoiaButtonClicked === 0){
+    document.getElementById("FurtherParanoia1").innerHTML = "Deine Paranoia wird Stärker durch seltsame Ereignisse wie:"
+    document.getElementById("FurtherParanoia2").innerHTML = "Bemerken von Überwachung"
+    document.getElementById("FurtherParanoia3").innerHTML = "Seltsame Interaktionen"
+    document.getElementById("FurtherParanoia4").innerHTML = "Und andere Ereignisse"
+    document.getElementById("FurtherParanoia5").innerHTML = "Manchmal steigt die Paranoiaanzeige auch erst später nach einem Ereignis"
+    document.getElementById("Paranoia_Meter_Explenetion").innerHTML = "Klick mich nochmale um das Tutorial zu verstecken"
+    ParanoiaButtonClicked++
+    }
+    else if(ParanoiaButtonClicked === 1){
+    document.getElementById("FurtherParanoia1").innerHTML = ""
+    document.getElementById("FurtherParanoia2").innerHTML = ""
+    document.getElementById("FurtherParanoia3").innerHTML = ""
+    document.getElementById("FurtherParanoia4").innerHTML = ""
+    document.getElementById("FurtherParanoia5").innerHTML = ""
+    ParanoiaButtonClicked = 0
+     document.getElementById("Paranoia_Meter_Explenetion").innerHTML = "Das ist deine Paranoia anzeige =>"
+    }
+}
+    
+     function FurtherExplanetionOfWatchMeter(){
+    if (WatchMeterButtonClicked === 0){
+    document.getElementById("FurtherWatchMeter").innerHTML = "Diese Anzeige Verfärbt sich wenn du stärker Überwacht wirst"
+    document.getElementById("FurtherWatchMeter2").innerHTML = "Erst ist sie Grün, das bedeutet dass du nicht überwacht wirst"
+    document.getElementById("FurtherWatchMeter3").innerHTML = "Dann wird sie Gelb, das bedeutet dass der Staat dich nebenbei überwacht"
+    document.getElementById("FurtherWatchMeter4").innerHTML = "Und zuletzt wird sie Rot, das bedeutet dass du stark überwacht wirst"
+    document.getElementById("FurtherWatchMeter5").innerHTML = "Wenn die Anzeige Rot ist solltest du besonders auf deine Aktionen achten"
+    document.getElementById("FurtherWatchMeter6").innerHTML = "Manche Menschen sind Böse und Verraten dich an den Staat"; DieseMenschen();
+    document.getElementById("EyeTip").innerHTML = "Wenn es dich sieht Starre nicht zurück"
+    function DieseMenschen(){
+    setTimeout(() => {
+     document.getElementById("FurtherWatchMeter7").innerHTML = "Diese Menschen verdienen keine Gnade"
+    }, 2000);
+    }
+      document.getElementById("WatchMeterExplenationButton").innerHTML = "Klick mich nochmale um das Tutorial zu verstecken"
+      NächsteTutorialSeiteOuter()
+    WatchMeterButtonClicked++
+    }
+    else if(WatchMeterButtonClicked === 1){
+     document.getElementById("FurtherWatchMeter").innerHTML = ""
+    document.getElementById("FurtherWatchMeter2").innerHTML = ""
+    document.getElementById("FurtherWatchMeter3").innerHTML = ""
+    document.getElementById("FurtherWatchMeter4").innerHTML = ""
+    document.getElementById("FurtherWatchMeter5").innerHTML = ""
+    document.getElementById("FurtherWatchMeter6").innerHTML = ""
+    document.getElementById("FurtherWatchMeter7").innerHTML = ""
+    WatchMeterButtonClicked = 0
+    document.getElementById("WatchMeterExplenationButton").innerHTML = ""
+   
+    }
+}
+
+    function NächsteTutorialSeiteOuter(){
+    speed = 50; 
+    txt = 'Nächste Tutorial Seite'
+    if (g < txt.length) {
+    document.getElementById("Seite2vonTutorialStart").innerHTML += txt.charAt(g);
+    g++; 
+    setTimeout(NächsteTutorialSeiteOuter, speed)
+		            }
+
+
+
+
+    }
+    </script>
+</body>
+</html>
