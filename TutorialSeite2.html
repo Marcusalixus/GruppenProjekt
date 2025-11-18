@@ -1,0 +1,79 @@
+ <html>
+    <head>
+        <meta charset="utf-8">
+		<link href='/Website/stil/TutorialStyle.css' rel='stylesheet' type='text/css'>                                 
+	    <title>Namen Eingeben</title>
+    </head>
+	
+	<body onload = "OutershellGenerallPage2()";"practice()">
+	
+	<p id="WatchMeterPage2">
+	</p>
+	
+    <p id="ParanoiaMeterPage2">
+	</p>
+	
+	<button  id="textOptionTutorial1" onclick= "ClearText()";"Text1_1()">
+	</button>
+	
+	<button id="textOptionTutorialChance1">	
+	</button>
+	
+	<button id="textOptionTutorial2" onclick= "ClearText()";"Text1_2()">
+	</button>
+	
+	<button id="textOptionTutorialChance2">
+	</button>
+	
+	<button id="textOptionTutorial3" onclick= "ClearText()";"Text1_3()">
+	</button>
+	
+	<button "textOptionTutorialChance3">
+	</button>
+	
+	<button  id="textOptionTutorial4" onclick= "ClearText()";"Text1_4()">
+	</button>
+	
+	<button id="textOptionTutorialChance4" >
+	</button>
+	
+	<script>
+	
+	
+	function OutershellGenerallPage2()
+	{
+	let i = 0
+	localStorage.getItem("WatchMeter", WatchMeter)
+	localStorage.getItem("ParanoiaMeter", ParanoiaMeter)
+	}
+	
+	function practice(){
+	
+	document.getElementById("WatchMeterPage2").innerHTML = "${WatchMeter}"
+	document.getElementById("textOptionTutorial1").innerHTML = "Ich bin einem Gang gefolgt und weiß nicht wo ich bin"
+	document.getElementById("textOptionTutorialChance1").innerHTML = "100%"
+	document.getElementById("textOptionTutorial2").innerHTML = "Lügen: Ich bin hier um die Lampe zu reparieren"
+	document.getElementById("textOptionTutorialChance2").innerHTML = "70%"
+	document.getElementById("textOptionTutorial3").innerHTML = "Hinterfragen: Darfst du hier eigentlich sein"
+	document.getElementById("textOptionTutorialChance3").innerHTML"30%"
+	document.getElementById("textOptionTutorial4").innerHTML = "Töten"
+	document.getElementById("textOptionTutorialChance4").innerHTML = "100%"
+	
+	}
+	function ClearText(){
+	
+	
+	document.getElementById("textOptionTutorial1").innerHTML = ""
+	document.getElementById("textOptionTutorialChance1").innerHTML = ""
+	document.getElementById("textOptionTutorial2").innerHTML = ""
+	document.getElementById("textOptionTutorialChance2").innerHTML = ""
+	document.getElementById("textOptionTutorial3").innerHTML = ""
+	document.getElementById("textOptionTutorialChance3").innerHTML = ""
+	document.getElementById("textOptionTutorial4").innerHTML =  ""
+	document.getElementById("textOptionTutorialChance4").innerHTML= ""	
+	
+	}
+	
+	</script>
+	</body>
+	
