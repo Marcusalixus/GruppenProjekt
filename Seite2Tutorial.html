@@ -1,0 +1,382 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+		<link href='/Website/stil/TutorialStyle.css' rel='stylesheet' type='text/css'>                                   
+	    <title>Namen Eingeben</title>
+    </head>
+    <body>
+    <p id="FirstDialogYay">???: Was tust du Hier ?!      
+    </p>
+    <button onclick="StartDialog1_1(); ClearText()" id="StartDialogOption1">       
+    </button>
+    <p id="TextOptionChance1">
+    </p>
+    <button onclick="StartDialog2_1(); ClearText()" id="StartDialogOption2">       
+    </button>
+    <p id="TextOptionChance2">       
+    </p>
+    <button onclick="StartDialog3_1(); ClearText()" id="StartDialogOption3">       
+    </button>
+     <p id="TextOptionChance3">       
+    </p>
+    <button onclick="StartDialog4_1(); ClearText()" id="StartDialogOption4">       
+    </button>
+     <p id="TextOptionChance4">       
+    </p>
+
+
+    <!-- TR To Reply   example TR1 refrence to Reply 1-->
+    <p id = "ReplyTo1">       
+    </p>
+    <button id = "Button1TR1" onclick="ClearText2(); StartDialog1_1_1()"></button>
+    <p id = "Button1TR1Chance">        
+    </p>
+ 
+        <p id="ReplyTo1_1">        
+        </p>
+
+        <button id="Button1TR1_1" onclick="StartDialog1_1_1_1();ClearText3()"></button>
+        <p id="Button1TR1_1Chance">           
+        </p>
+
+            <p id="ReplyTo1_1_1">           
+            </p>
+
+            <button id="Button1TR1_1_1"></button>
+            <p id="Button1TR1_1_1Chance">                
+            </p>
+            <button id="Button2TR1_1_1"></button>
+            <p id="Button2TR1_1_1Chance">                
+            </p>
+            <button id="Button3TR1_1_1"></button>
+            <p id="Button3TR1_1_1Chance">                
+            </p>
+
+
+            <p id="ReplyTo1_1_2">           
+            </p>
+
+
+            <p id="ReplyTo1_1_3">           
+            </p>
+            <p id="ReplyTo1_1_4">           
+            </p>
+
+
+            <p id="ReplyTo1_1_5">           
+            </p>
+            <p id="ReplyTo1_1_6">           
+            </p>
+
+
+        <button id="Button2TR1_1"></button>
+        <p id="Button2TR1_1Chance">           
+        </p>
+
+
+        <button id="Button3TR1_1"></button>
+        <p id="Button3TR1_1Chance">            
+        </p>
+
+
+        <button id="Button4TR1_1"></button>
+        <p id="Button4TR1_1Chance">            
+        </p>
+
+
+ 
+    <button id= "Button2TR1" onclick="ClearText2(); StartDialog1_2_1()"></button>
+    <p id = "Button2TR1Chance">       
+    </p>
+
+        <p id="ReplyTo1_2">       
+        </p>
+
+
+    <p id = "ReplyTo2">       
+    </p>
+    <button id="Button1TR2" onclick="ClearText2()"></button>
+    <p id="Button1TR2Chance">       
+    </p>
+    <button id="Button2TR2" onclick="ClearText2()"></button>
+    <p id="Button2TR2Chance">       
+    </p>
+
+    <p id = "ReplyTo3">       
+    </p>
+    <button id="Button1TR3" onclick="ClearText2()"></button>
+    <p id="Button1TR3Chance">      
+    </p>
+    <button id="Button2TR3" onclick="ClearText2()"></button>
+    <p id="Button2TR3Chance">      
+    </p>
+
+    <p id = "ReplyTo4">       
+    </p>
+     <button id="Button1TR4" onclick="ClearText2()"></button>
+    <p id="Button1TR4Chance">      
+    </p>
+    <button id="Button2TR4" onclick="ClearText2()"></button>
+    <p id="Button2TR4Chance">      
+    </p>
+
+    <button id="Fortfahren2"></button>
+    <button id="PlayRestOfTutorialButton"></button>
+    <button id="RepeatTutorialButton"></button>
+
+    <p id="DefaultEnd1">      
+    </p>
+    <p id="DefaultEnd2">      
+    </p>
+    <p id="DefaultEnd3">      
+    </p>
+    <p id="DefaultEnd4">      
+    </p>
+ 
+    <script>
+       
+     window.onload = function StartderSeite(){
+    StartTextApear()
+    const NameOfPlayer =  localStorage.getItem("NameOfPlayer");
+    const ParanoiaMeter =  localStorage.getItem("ParanoiaMeter");
+    const WatchMeter =  localStorage.getItem("WatchMeter");
+     };
+
+        function DefaultEndOfTutorialSpeech()
+            {
+            document.getElementById("DefaultEnd1").innerHTML="Dass war wohl das Ende von diesem Gespräch"
+            document.getElementById("DefaultEnd2").innerHTML="Ob dieses Gespräch so verlief wie du wolltest ist deine Entscheidung"
+            document.getElementById("DefaultEnd3").innerHTML="Falls du es nochmal probiern willst kannst du den Widerholen Knopf drücken"
+             document.getElementById("DefaultEnd4").innerHTML="In dem rest von dem Tutorial werden die Funktionen die du noch nicht kanntest erklärt"
+            document.getElementById("RepeatTutorialButton").innerHTML="Wiederholen"
+            document.getElementById("PlayRestOfTutorialButton").innerHTML="Rest des Tutorials spielen"            
+            }
+
+    function  StartTextApear(){
+    document.getElementById("StartDialogOption1").innerHTML = "Wahrheit: Ich bin einem Gang gefolgt und bin jetzt hier"
+    document.getElementById("TextOptionChance1").innerHTML = "100%"
+    document.getElementById("StartDialogOption2").innerHTML = "Lügen: Ich bin hier um die Lampe zu Reparieren"
+    document.getElementById("TextOptionChance2").innerHTML = "50%"
+    document.getElementById("StartDialogOption3").innerHTML = "Beschuldigen: Darfst du hier eigentlich sein"
+    document.getElementById("TextOptionChance3").innerHTML = "30%"
+    document.getElementById("StartDialogOption4").innerHTML = "Töten:(Hammer Greifen)"
+    document.getElementById("TextOptionChance4").innerHTML = "100%"
+         }
+
+        function ClearText(){
+    document.getElementById("StartDialogOption1").style.display = "none";
+    document.getElementById("TextOptionChance1").style.display = "none";
+    document.getElementById("StartDialogOption2").style.display = "none";
+    document.getElementById("TextOptionChance2").style.display = "none";
+    document.getElementById("StartDialogOption3").style.display = "none";
+    document.getElementById("TextOptionChance3").style.display = "none";
+    document.getElementById("StartDialogOption4").style.display = "none";
+    document.getElementById("TextOptionChance4").style.display = "none";   
+    document.getElementById("FirstDialogYay").style.display = "none"; 
+       
+         } 
+
+
+        function ClearText2()
+        {
+        document.getElementById("ReplyTo1").style.display = "none";
+        document.getElementById("ReplyTo2").style.display = "none";
+        document.getElementById("ReplyTo3").style.display = "none";
+        document.getElementById("ReplyTo4").style.display = "none";
+
+        document.getElementById("Button1TR1").style.display = "none";
+        document.getElementById("Button1TR1Chance").style.display = "none";
+        document.getElementById("Button2TR1").style.display = "none";
+        document.getElementById("Button2TR1Chance").style.display = "none";   
+
+        document.getElementById("Button1TR2").style.display = "none";
+        document.getElementById("Button1TR2Chance").style.display = "none";
+        document.getElementById("Button2TR2").style.display = "none";
+        document.getElementById("Button2TR2Chance").style.display = "none";   
+
+        document.getElementById("Button1TR3").style.display = "none";
+        document.getElementById("Button1TR3Chance").style.display = "none";
+        document.getElementById("Button2TR3").style.display = "none";
+        document.getElementById("Button2TR3Chance").style.display = "none";   
+
+        document.getElementById("Button1TR4").style.display = "none";
+        document.getElementById("Button1TR4Chance").style.display = "none";
+        document.getElementById("Button2TR4").style.display = "none";
+        document.getElementById("Button2TR4Chance").style.display = "none";          
+        }
+
+            function ClearText3()
+            {
+            document.getElementById("ReplyTo1_1").style.display = "none";
+            document.getElementById("ReplyTo1_2").style.display = "none";
+            
+            document.getElementById("Button1TR1_1").style.display = "none";
+            document.getElementById("Button1TR1_1Chance").style.display = "none";
+            document.getElementById("Button2TR1_1").style.display = "none";
+            document.getElementById("Button2TR1_1Chance").style.display = "none";
+            document.getElementById("Button3TR1_1").style.display = "none";
+            document.getElementById("Button3TR1_1Chance").style.display = "none";
+            document.getElementById("Button4TR1_1").style.display = "none";
+            document.getElementById("Button4TR1_1Chance").style.display = "none";   
+   
+
+
+
+
+            }
+
+
+
+
+        function  StartDialog1_1()
+        {          
+        document.getElementById("ReplyTo1").innerHTML = "Ahh Ha, dann verzieh dich mal"
+        StartDialog1_2()
+        }
+
+            function StartDialog1_2()
+            {
+            document.getElementById("Button1TR1").innerHTML = "Konfrontieren: Und wieso sollte ich das tun "
+            document.getElementById("Button1TR1Chance").innerHTML = "50%"
+            document.getElementById("Button2TR1").innerHTML = "Ergeben: Das Mache ich, tut mir wirklich leid"
+            document.getElementById("Button2TR1Chance").innerHTML = "100%"
+            }
+
+                function StartDialog1_1_1()
+                {
+                document.getElementById("ReplyTo1_1").innerHTML = "Ohhh, Ich mag deine einstellung, folge mir wenn du mehr erfahren willst."
+                StartDialog1_1_2()
+                }
+                    
+                    function StartDialog1_1_2()
+                    {
+                    document.getElementById("Button1TR1_1").innerHTML = "Folgen: Gut, ich habe aber noch ein paar Fragen"
+                    document.getElementById("Button1TR1_1Chance").innerHTML = "75%"
+                    document.getElementById("Button2TR1_1").innerHTML = "Folgen: Ich folge dir dann wohl"
+                    document.getElementById("Button2TR1_1Chance").innerHTML = "100%"
+                    document.getElementById("Button3TR1_1").innerHTML = "Hinterfragen: Wieso sollte ich dir vertrauen"
+                    document.getElementById("Button3TR1_1Chance").innerHTML = "100%"
+                    document.getElementById("Button4TR1_1").innerHTML = "Verweigern: Ich glaube ich gehe meinen Eigenen Weg"
+                    document.getElementById("Button4TR1_1Chance").innerHTML = "50%"
+                    }
+
+                        function StartDialog1_1_1_1()
+                        {
+                        document.getElementById("ReplyTo1_1_1").innerHTML = "Ich bin bereit deine Fragen zu beantworten"
+                        StartDialog1_1_1_2()
+                        }
+
+                            function StartDialog1_1_1_2()
+                            {
+                            document.getElementById("Button1TR1_1_1").innerHTML = "Fragen: Wo soll ich dir denn hinfolgen"
+                            document.getElementById("Button1TR1_1_1Chance").innerHTML = "100%"
+                            document.getElementById("Button2TR1_1_1").innerHTML = "Fragen: Worüber willst du mir denn dann dort erzählen"
+                            document.getElementById("Button2TR1_1_1Chance").innerHTML = "100%"
+                            document.getElementById("Button3TR1_1_1").innerHTML = "Mitgehen: Ich habe doch keine Fragen mehr"
+                            document.getElementById("Button3TR1_1_1Chance").innerHTML = "100%"
+
+                            }
+
+
+                        function StartDialog1_1_2_1()
+                        {
+                        document.getElementById("ReplyTo1_1_2").innerHTML = "Gut dann sollten wir jetzt gehen"
+                        StartDialog1_1_2_2()
+                        }
+                         
+                            function StartDialog1_1_2_2()
+                            {
+
+
+                            }
+
+
+                        function StartDialog1_1_3_1()
+                        {
+                        document.getElementById("ReplyTo1_1_3").innerHTML = "Warum solltest du mir nicht vertrauen"
+                        document.getElementById("ReplyTo1_1_4").innerHTML = "Wenn ich dir etwas antuen wollte dann hätte ich es doch schon getan"
+                        StartDialog1_1_3_2()
+                        }
+ 
+                            function StartDialog1_1_3_2()
+                            {
+
+                                
+                            }
+
+                        function StartDialog1_1_4_1()
+                        {
+                        document.getElementById("ReplyTo1_1_5").innerHTML = "Dass kann ich dich leider nicht tun lassen,"
+                        document.getElementById("ReplyTo1_1_6").innerHTML = "jetzt wo ich dir schon ein Angebot gemacht habe"
+                        StartDialog1_1_4_2()
+                        }
+
+                            function StartDialog1_1_4_2()
+                            {
+
+                                
+                            }
+
+
+
+                function StartDialog1_2_1()
+                {
+                document.getElementById("ReplyTo1_2").innerHTML = "Dann mach dich jetzt mal auf den weg."
+                setTimeout(() =>{
+                DefaultEndOfTutorialSpeech()
+                },1000);
+                }
+                    
+                  
+   
+
+        function  StartDialog2_1()
+        {         
+        document.getElementById("ReplyTo2").innerHTML = "Ahh ja die ist Schon ziemlich lange kaputt"
+        StartDialog2_2()
+        }
+
+            function StartDialog2_2()
+            {
+
+            document.getElementById("Button1TR2").innerHTML = "Annehmen: Ja ich mach mich dann mal an die Arbeit"
+            document.getElementById("Button1TR2Chance").innerHTML = "50%"
+            document.getElementById("Button2TR2").innerHTML = "Erkundigen: Warum hat sich denn bis jetzt niemand drum gekümmert"
+            document.getElementById("Button2TR2Chance").innerHTML = "100%"      
+            }
+
+
+        function  StartDialog3_1()
+        {
+          
+        document.getElementById("ReplyTo3").innerHTML = "Also aähmmm, natürlich kümmer dich um deine eigenen sachen"
+        StartDialog3_2()
+        }
+    
+            function StartDialog3_2()
+            {
+            document.getElementById("Button1TR3").innerHTML = "Annehmen: Ja ich mach mich dann mal an die Arbeit"
+            document.getElementById("Button1TR3Chance").innerHTML = "50%"
+            document.getElementById("Button2TR3").innerHTML = "Erkundigen: Warum hat sich denn bis jetzt niemand drum gekümmert"
+            document.getElementById("Button2TR3Chance").innerHTML = "100%"             
+            }
+
+
+        function  StartDialog4_1()
+        {         
+        document.getElementById("ReplyTo4").innerHTML = "Morale:(Bist du dir da 100% sicher)"
+        StartDialog4_2()
+        }
+
+            function StartDialog4_2()
+            {
+            document.getElementById("Button1TR4").innerHTML = "Mord:(Ja)"
+            document.getElementById("Button1TR4Chance").innerHTML = "100%"
+            document.getElementById("Button2TR4").innerHTML = "Humanität:(Nein)"
+            document.getElementById("Button2TR4Chance").innerHTML = "100%"        
+            }
+
+
+    </script>
+    </body>
+  
